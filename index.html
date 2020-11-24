@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+     Michael Whalen
+     Michael_Whalen@student.uml.edu
+     Michael Whalen Computer Science Student in 91.61 GUI Prgoramming I Umass Lowell
+     11/24/20
+     Multiplication table made using javascript with html/css. Added jquery valdation to js file. Also added tabs/slider with tab create and delete button.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Multiplication Table HW7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Michael Whalen">
+
+  <link rel="stylesheet" href="myStyle.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Hw7 stylesheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+
+
+</head>
+
+<body>
+  <!-- Imported navbar from hw4 -->
+  <!-- Imported navbar from here https://getbootstrap.com/docs/3.3/components/#navbar -->
+  <nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+  <!-- Creating header for navbar along with making collapsible navbar -->
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+     </button>
+      <a class="navbar-brand" href="https://cs.uml.edu/~mwhalen/hw4">Michael's Webpage</a>
+   </div>
+
+  <!-- Creating dropdown here will assignments -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+    <!-- Dropdown menu with all homeworks here inside the nav -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Homeworks <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://cs.uml.edu/~mwhalen">Homework 2</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="https://cs.uml.edu/~mwhalen/hw3">Homework 3</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="https://cs.uml.edu/~mwhalen/hw4">Homework 4</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="https://mikewhalen2998.github.io/assign5/">Homework 5</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Homework 6</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Homework 7</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Homework 8</a></li>
+          <li role="separator" class="divider"></li>
+        </ul>
+      </li>
+      <!-- Added some of my favorite websites through clickable buttons that bring you to each webpage -->
+      <li> <a href="https://mikewhalen2998.github.io/myWebsite/" target="_blank" class="btn btn-link" role="button">Home </a> </li>
+      <li> <a href="https://mikewhalen2998.github.io/myWebsite/aboutus.html" target="_blank" class="btn btn-link" role="button">About me</a> </li>
+      <li> <a href="https://mikewhalen2998.github.io/myWebsite/photos.html" target="_blank" class="btn btn-link" role="button">Photos </a> </li>
+    </ul>
+    <!-- Adding contact information on the top this time instead of creating a footer. This is on the right hand side of the navbar -->
+          <ul class="nav navbar-nav navbar-right">
+           <li class="dropdown">
+           <li><a href="#">Contact Information: Michael Whalen, Student Email: Michael_Whalen@student.uml.edu</a></li>
+          </ul> <!-- collapse for the righthand side of navbar -->
+      </li> <!-- dropdown li class collapse -->
+    </ul> <!--dropdown-menu collapse -->
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav> <!-- close out navbar -->
+
+<!--Hw5 and HW6 stuff and beyond -->
+<div class="form-style">
+  <!-- added form id here for jquery validation stuff and onsubmit because buttons don't work with jquery for some reason -->
+<form id="inputForm">
+  <!-- Here I'm creating the form that reads the inputs from the user for min/max row and column. Each input has its own unique id and name. Name will be used for jquery later.-->
+
+<label for='minRow'> Enter Minimum Row Value: </label><br>
+<input type="number" id="minRowNumber" name="minRowNumber"  required><br>
+
+<div id="sliderminRow">
+</div>
+
+<label for ='maxRow'> Enter Maximum Row Value: </label><br>
+<input type="number" id="maxRowNumber" name="maxRowNumber"  required><br>
+
+<div id="slidermaxRow">
+</div>
+
+<label for ='minColumn'> Enter Minimum Column Value: </label><br>
+<input type="number" id="minColumnNumber" name="minColumnNumber"  required><br>
+
+<div id="sliderminColumn">
+</div>
+
+<label for ='maxColumn'> Enter Maximum Column Value: </label><br>
+<input type="number" id="maxColumnNumber" name="maxColumnNumber"  required><br>
+
+<div id="slidermaxColumn">
+</div>
+
+<!-- Added type submit here because buttons don't work with jquery for some reason -->
+<input type="button" value="Start new Tab" id="newTabButton">
+<input type="button" value="Delete selected tabs" id="deleteTabButton">
+</form>
+
+ <div id="myTabs">
+   <ul>
+   </ul>
+ </div>
+<br>
+
+<!-- Paragraph here to print out numbers error messages to tell the user the general error they're having.-->
+<p id="test"></p>
+</div>
+
+
+<!-- Hw5/6 js files -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+<!-- Jquery ui script-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- My js file -->
+<script src="myScript.js"></script>
+
+
+<!--bootstrap files -->
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

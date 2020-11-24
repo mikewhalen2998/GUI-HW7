@@ -1,0 +1,70 @@
+/*   Michael Whalen
+     Michael_Whalen@student.uml.edu
+     Michael Whalen Computer Science Student in 91.61 GUI Prgoramming I Umass Lowell
+     11/24/20
+     Styling for table
+     Styling also for tabs/sliders
+*/
+
+
+
+
+td:first-child{
+background-color: black;
+color:white;
+padding:10px;
+margin:10px;
+}
+
+
+tr:first-child{
+  background-color: black;
+  color:white;
+  padding:10px;
+  margin:10px;
+}
+
+.form-style{
+background-color:lightgrey;
+width:300px;
+margin:auto;
+}
+
+#myTable{
+  margin:auto;
+  border:1px solid black;
+}
+
+/* Made table scrollable and centered it along with shortening it so it didn't take full height or width of screen */
+.myDiv{
+  overflow:scroll;
+  margin:auto;
+  height:30vh;
+}
+
+/* Added custom color and font-style to display error message differently from regular text */
+.error{
+  color:red;
+  font-style:italic;
+}
+
+/* Styling for my sliders */
+#sliderminRow{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+#slidermaxRow{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+#sliderminColumn{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+#slidermaxColumn{
+  margin-top:10px;
+  margin-bottom:10px;
+}
